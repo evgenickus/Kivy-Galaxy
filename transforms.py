@@ -3,7 +3,7 @@ def transform(self, x, y):
     return self.transform_perspective(x, y)
 
 def transform2D(sef, x, y):
-    return x, y
+    return int(x), int(y)
 
 def transform_perspective(self, x, y):
     lin_y = y * self.perspective_point_y / self.height

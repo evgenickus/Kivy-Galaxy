@@ -42,8 +42,8 @@ class MainWidget(RelativeLayout):
     current_offset_y = 0
     current_offset_x = 0
  
-    SPEED = 0.1
-    SPEED_X = 3.0
+    SPEED = 0.6
+    SPEED_X = 2.0
 
     current_speed_x = 0
 
@@ -296,7 +296,7 @@ class MainWidget(RelativeLayout):
             line_y = self.get_line_y_from_index(i)
             x1, y1 = self.transform(xmin, line_y)
             x2, y2 = self.transform(xmax, line_y)
-            self.horizontal_lines[i].points = [int(x1), int(y1), int(x2), int(y2)]
+            self.horizontal_lines[i].points = [x1, y1, x2, y2]
 
     def update(self, dt):
         time_factor = dt * 60
