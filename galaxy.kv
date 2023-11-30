@@ -1,0 +1,68 @@
+#:kivy 2.2.0
+#:import menu menu
+
+Image:
+    
+<Image>:
+    source: "images/bg1.jpg"
+    allow_stretch: True
+    keep_ratio: False
+    MainWidget:
+        size: root.size
+
+<MainWidget>:
+    menu_widget: menu_widget
+    # speed_label: speed_label
+    # score_label: score_label
+    perspective_point_x: self.width/2
+    perspective_point_y: self.height*0.75
+    MenuWidget:
+        id: menu_widget
+    BoxLayout:
+        # canvas.before:
+        #     Color:
+        #         rgba: 0, 1, 0, .5
+        #     Rectangle:
+        #         pos: self.pos
+        #         size: self.size
+        size_hint: .3, .15
+        pos_hint: { 'x': 0, 'top': 1}
+        Label:
+            # canvas.before:
+            #     Color:
+            #         rgba: 1, 0, 0, .5
+            #     Rectangle:
+            #         pos: self.pos
+            #         size: self.size
+            text: "SCORE"
+            font_name: "Fonts/Eurostile.ttf"
+            font_size: dp(25)
+            size_hint: .4, 1
+
+        Label:
+            # canvas.before:
+            #     Color:
+            #         rgba: 0, 0, 1, .5
+            #     Rectangle:
+            #         pos: self.pos
+            #         size: self.size
+            text: root.count_score
+            font_name: "Fonts/Eurostile.ttf"
+            font_size: dp(25)
+            size_hint: .6, 1
+            text_size: self.size
+            halign: 'left'
+            valign: 'middle'
+            
+
+
+    # Label:
+    #     id: speed_label
+    #     opacity: 0
+    #     text: root.count_speed + ' km/h'
+    #     font_name: "Fonts/Lcd.ttf"
+    #     font_size: "40dp"
+    #     color: 1, 0, 0
+    #     pos_hint: None, None
+    #     pos_hint: { 'center_x': .12, 'center_y': .93}
+
